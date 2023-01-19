@@ -10,7 +10,7 @@ const amountOfDaysToFill = minimumSummaryDatesSize - summaryDates.length
 
 export function SummaryTable() {
 	return (
-		<div className="w-full flex">
+		<div className="w-full flex p-6">
 			<div className="grid grid-rows-7 grid-flow-row gap-3">
 				{weekDays.map((weekDay, i) => {
 					return (
@@ -24,7 +24,13 @@ export function SummaryTable() {
 
 			<div className="grid grid-rows-7 grid-flow-col gap-3">
 				{summaryDates.map(date => {
-					return <HabitDay key={date.toString()}/>
+					return (
+						<HabitDay
+							key={date.toString()}
+							amount={5}
+							completed={Math.round(Math.random() * 5)}
+						/>
+					)
 				})}
 				{amountOfDaysToFill > 0 && Array.from({length: amountOfDaysToFill}).map((_, i) => {
 					return (
