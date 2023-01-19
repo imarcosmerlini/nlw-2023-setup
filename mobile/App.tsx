@@ -1,5 +1,5 @@
 import './src/lib/dayjs'
-import {StatusBar} from 'react-native';
+import {StatusBar} from 'react-native'
 import {
 	useFonts,
 	Inter_400Regular,
@@ -7,8 +7,9 @@ import {
 	Inter_700Bold,
 	Inter_800ExtraBold
 } from '@expo-google-fonts/inter'
-import {Loading} from "./src/components/Loading";
-import {Home} from "./src/screens/Home";
+
+import {Loading} from "./src/components/Loading"
+import {Routes} from "./src/routes"
 
 export default function App() {
 	const [fontsLoaded] = useFonts({
@@ -26,7 +27,7 @@ export default function App() {
 
 	return (
 		<>
-			<Home></Home>
+			<Routes/>
 			<StatusBar barStyle="light-content" backgroundColor="transparent" translucent/>
 		</>
 	);
